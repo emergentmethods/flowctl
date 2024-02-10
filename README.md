@@ -1,5 +1,9 @@
 # flowctl
 
+![GitLab Release (latest by SemVer)](https://img.shields.io/gitlab/v/release/emergentmethods/flowctl?style=flat-square)
+![GitLab](https://img.shields.io/gitlab/license/emergentmethods/flowctl?style=flat-square)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/flowctl?style=flat-square)
+
 The CLI tool for managing and operating flowdapt.
 
 
