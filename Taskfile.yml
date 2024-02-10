@@ -44,7 +44,6 @@ tasks:
         IMAGE_NAME,
         IMAGE_TAG,
         PYTHON_VERSION,
-        CI_DEP_TOKEN,
       ]
     cmds:
       - docker build {{.DOCKER_BUILD_ARGS}} --build-arg PYTHON_VERSION={{.PYTHON_VERSION}} -t {{.IMAGE_NAME}}:{{.IMAGE_TAG}} .

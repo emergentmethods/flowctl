@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "flowctl"
-version = "0.1.0"
+version = "0.0.0"
 description = "The CLI tool for operation of Flowdapt."
 authors = ["Emergent Methods <contact@emergentmethods.ai>"]
 license = "MIT"
