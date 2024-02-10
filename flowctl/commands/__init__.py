@@ -1,0 +1,10 @@
+import flowctl.commands.apply  # noqa: E402, F401
+import flowctl.commands.delete  # noqa: E402, F401
+import flowctl.commands.get  # noqa: E402, F401
+import flowctl.commands.inspect  # noqa: E402, F401
+import flowctl.commands.config  # noqa: E402, F401
+import flowctl.commands.dev  # noqa: E402, F401
+import flowctl.commands.run  # noqa: E402, F401
+import flowctl.commands.status  # noqa: E402, F401
+import flowctl.commands.patch  # noqa: E402, F401
+import flowctl.commands.metrics  # noqa: E402, F401

@@ -1,0 +1,50 @@
+version: '3'
+
+
+vars:
+  PACKAGE_SRC_DIR: flowctl
+
+  # Docker specific variables
+  DOCKER_BUILDKIT: 1
+  IMAGE_REGISTRY: ghcr.io
+  IMAGE_REPOSITORY: emergentmethods/flowctl
+  IMAGE_NAME: "{{.IMAGE_REGISTRY}}/{{.IMAGE_REPOSITORY}}"
+  IMAGE_TAG: local
+  DOCKER_BUILD_ARGS: ""
+  PYTHON_VERSION: 3.11
+
+
+tasks:
+  # ---------------------
+
+  # Linting
+  lint:
+    cmds:
+      - flake8 {{.PACKAGE_SRC_DIR}}
+
+  # Run unit tests
+  unit-tests:
+    cmds:
+      - coverage run -m pytest --junitxml=report.xml
+      - coverage report
+      - coverage xml
+      - coverage html -d coverage-report
+
+  # Build the documentation
+  build-docs:
+    cmds:
+      - flowctl dev docs cli.md --style table
+
+  # ---------------------
+
+  # Build the base image
+  build-docker:
+    requires:
+      vars: [
+        IMAGE_NAME,
+        IMAGE_TAG,
+        PYTHON_VERSION,
+        CI_DEP_TOKEN,
+      ]
+    cmds:
+      - docker build {{.DOCKER_BUILD_ARGS}} --build-arg PYTHON_VERSION={{.PYTHON_VERSION}} -t {{.IMAGE_NAME}}:{{.IMAGE_TAG}} .

@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "flowctl"
+version = "0.0.0"
+description = "The CLI tool for operation of Flowdapt."
+authors = ["Emergent Methods <contact@emergentmethods.ai>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+typer = "^0.9.0"
+rich = "^13.7.0"
+flowdapt-sdk = "^0.1.0"
+python-manifest = "^2.2.1"
+aiofiles = "^23.2.1"
+humanize = "^4.9.0"
+typing_extensions = "^4.8.0"
+jmespath-community = "^1.1.2"
+plotext = "^5.2.8"
+
+[tool.poetry.scripts]
+flowctl = "flowctl.cli:cli"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.1"
+pytest-asyncio = "^0.21.0"
+coverage = "^7.2.3"
+types-aiofiles = "^23.1.0.4"
+flake8 = "^6.0.0"
+mypy = "^1.4.1"
+
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "$version"
+version_scheme = "semver"
+version_provider = "poetry"
+update_changelog_on_bump = true
+bump_message = "chore(release): Release $new_version"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.mypy]
+ignore_missing_imports = true
+namespace_packages = true
+exclude = [
+    '^tests\.py$',
+]
