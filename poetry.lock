@@ -164,12 +164,12 @@ pyflakes = ">=3.1.0,<3.2.0"
 
 [[package]]
 name = "flowdapt-sdk"
-version = "0.1.0"
+version = "0.1.1"
 description = "Python SDK for Flowdapt"
 optional = false
 python-versions = ">=3.10,<4.0"
 files = [
-    {file = "flowdapt_sdk-0.1.0-py3-none-any.whl", hash = "sha256:4212c8cdc8e1beb21d14ac40d876cbff51af025c6206fd27c7c51f2e87f8163b"},
+    {file = "flowdapt_sdk-0.1.1-py3-none-any.whl", hash = "sha256:49e01e1248802443de29e347ddb840a6c367bdc125c307806de03dc829b5a406"},
 ]
 
 [package.dependencies]
@@ -901,4 +901,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "c5af736b82b64224b074fd97b5eab279d2d7f9d98253893a58d082373be7822a"
+content-hash = "ed8f7267a569d079f8f9307c62d65d776d35c6942828cc3c2ae316eca3e007f5"
