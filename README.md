@@ -16,7 +16,19 @@ pip install flowctl
 
 Or you can use the docker images provided:
 ```bash
-docker run -ti --rm -d -v "$(pwd)":/app --network host ghcr.io/emergentmethods/flowctl:latest --server http://my-flowdapt-server:8080 get workflows
+docker run -ti --rm -v "$(pwd)":/data --network host ghcr.io/emergentmethods/flowctl:latest --help
+```
+
+If you'd like, you can set an alias for the docker command to make it easier to use. For example, in bash you can add the following to your `.bashrc` or `.bash_profile` file:
+
+```bash
+alias flowctl='docker run -ti --rm -v "$(pwd)":/data --network host ghcr.io/emergentmethods/flowctl:latest'
+```
+
+Then you can use `flowctl` as if it were installed on your system.
+
+```bash
+flowctl --help
 ```
 
 ## Documentation

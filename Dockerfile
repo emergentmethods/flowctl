@@ -60,11 +60,13 @@ ENV FLOWCTL__APP_DIR="/data"
 # Deactivate config file persistence and reading by default
 # This will just cause the server to use default values
 # but can still be overridden by setting this variable
-ENV FLOWDCTL__CONFIG_FILE="-"
+ENV FLOWCTL__CONFIG_FILE="-"
 
 # Create the data directory and give necessary permissions
 RUN mkdir -p /data && chown -R flowdapt:flowdapt /data
 
+WORKDIR /data
+
 # Switch to the non-root user
 USER flowdapt
-CMD ["python3", "-m", "flowctl"]
+ENTRYPOINT ["flowctl"]
